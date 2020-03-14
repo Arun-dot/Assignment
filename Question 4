@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+public static void main(String[] args) {
+   Scanner scan = new Scanner(System.in);
+   int i;
+   int n = scan.nextInt();
+    int []arr = new int[n];
+    for(i = 0; i < n; i++)
+    {
+        arr[i] = scan.nextInt();
+    }
+    int z = scan.nextInt();
+    int []arr1 = new int[z];
+    for (i = 0; i < z; i++)
+    {
+       arr1[i] = arr[i];
+    }
+    Random l = new Random();
+    for (i = z; i < n; i++)
+    {
+        int j = l.nextInt(i + 1);
+        if(j < z)
+       arr1[j] = arr[i];
+    }
+    System.out.println("The randomly selected elements from resultant array:");
+    System.out.println(Arrays.toString(arr1));
+  }
+}
